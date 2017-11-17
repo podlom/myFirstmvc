@@ -8,8 +8,8 @@ class Loader
         $arr = explode('\\', $class);
         $prefix = array_shift($arr);
 
-        if($prefix == 'app') {
-            $prefix_file = '../app/components';
+        if($prefix == 'components') {
+            $prefix_file = '../components';
         }
         $file = $prefix_file .array_shift($arr) .'.php';
 

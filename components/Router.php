@@ -1,11 +1,10 @@
 <?php
-namespace app;
+namespace components;
 
 class Router
 {
     private  $routes;
-
-
+    $routPath = ROOT .'/cofig/routes.php';
     public function __construct()
     {
 
