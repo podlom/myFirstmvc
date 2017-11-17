@@ -1,7 +1,7 @@
 <?php
-use app\Router;
+use components\Router;
 //require  '../app/components/Router.php';
-require '../app/components/Loader.php';
+require '../components/Loader.php';
 
 $loader = new Loader();
 spl_autoload_register([$loader, 'loadClass']);
