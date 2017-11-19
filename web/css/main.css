@@ -1,0 +1,22 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+* {
+    box-sizing: border-box;
+}
+.header {
+    position: absolute;
+    height: 44px;
+    width: 100%;
+    background-color: #999;
+    z-index: 4;
+}
+.side-nav {
+    position: absolute;
+    width: 100%;
+    background-color: #666;
+    height: 100vh;
+    z-index: 3;
+    padding-top: 44px
+}
