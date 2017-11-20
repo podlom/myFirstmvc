@@ -5,11 +5,11 @@ class Loader
 {
     public function loadClass($class)
     {
-        $arr = explode('\\', $class);
+        $arr = explode('/', $class);
         $prefix = array_shift($arr);
 
         if($prefix == 'components') {
-            $prefix_file = '../components';
+            $prefix_file = '/components';
         }
         $file = $prefix_file .array_shift($arr) .'.php';
 

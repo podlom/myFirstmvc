@@ -6,10 +6,9 @@ class Router
 {
     private $routes;
 
-
     public function __construct()
     {
-        $routesPath = ROOT . '../config/routes.php';
+        $routesPath = ROOT .'/config/routes.php';
         $this->routes = include($routesPath);
     }
 
@@ -32,18 +31,33 @@ class Router
 
             //Далее нужно сравнить $uripattern and $uri
             //исп тильду, чтобы разрешить использовать слеш в запросе
-            if (preg_match('~$uriPattern~', $uri)) {
-
+            if (preg_match("~$uriPattern~", $uri)) {
+//Получение пути
+                $internalRoute = preg_replace("~$uriPattern~", $path, $uri);
                 //Определяю какой контроллер и action обрабатывают запрос
                 $segment = explode('/', $path);
 
-                $controllerName = array_shift($segment) .'Controller';
+                $controllerName = array_shift($segment) . 'Controller';
                 $controllerName = ucfirst($controllerName);
 
-                $actionName = 'action' .ucfirst(array_shift($segment));
+                $actionName = 'action' . ucfirst(array_shift($segment));
+                $parameters = $segment;
+                //Подключаем контроллеры
+                $controllerFile = ROOT .'/controllers/' .$controllerName .'.php';
+
+                if (file_exists($controllerFile)) {
+                    include_once($controllerFile);
+                }
+
+                //Создаем обьект
+                $controllerObject = new $controllerName;
+                $result = $controllerObject->$actionName($parameters);
+
+                if ($result != null) {
+                    break;
+                }
             }
         }
-
 
 
     }
