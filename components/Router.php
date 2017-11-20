@@ -4,7 +4,13 @@ namespace components;
 
 class Router
 {
+<<<<<<< HEAD
     private $routes;
+=======
+    private  $routes;
+    $routPath = ROOT.'cofig/routes.php';
+    $thhis->routes = include($routerPath);
+>>>>>>> 65bd1d9304ce8e8575cee216266b108fda85c44a
 
     public function __construct()
     {
