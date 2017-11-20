@@ -4,13 +4,9 @@ namespace components;
 
 class Router
 {
-<<<<<<< HEAD
-    private $routes;
-=======
+
     private  $routes;
-    $routPath = ROOT.'cofig/routes.php';
-    $thhis->routes = include($routerPath);
->>>>>>> 65bd1d9304ce8e8575cee216266b108fda85c44a
+
 
     public function __construct()
     {
@@ -38,7 +34,7 @@ class Router
             //Далее нужно сравнить $uripattern and $uri
             //исп тильду, чтобы разрешить использовать слеш в запросе
             if (preg_match("~$uriPattern~", $uri)) {
-//Получение пути
+                //Получение пути
                 $internalRoute = preg_replace("~$uriPattern~", $path, $uri);
                 //Определяю какой контроллер и action обрабатывают запрос
                 $segment = explode('/', $path);
