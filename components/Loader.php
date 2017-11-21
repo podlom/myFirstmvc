@@ -9,7 +9,7 @@ class Loader
         $prefix = array_shift($arr);
 
         if($prefix == 'components') {
-            $prefix_file = '/components';
+            $prefix_file = '../components/';
         }
         $file = $prefix_file .array_shift($arr) .'.php';
 

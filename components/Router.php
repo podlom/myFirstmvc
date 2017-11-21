@@ -37,7 +37,7 @@ class Router
                 //Получение пути
                 $internalRoute = preg_replace("~$uriPattern~", $path, $uri);
                 //Определяю какой контроллер и action обрабатывают запрос
-                $segment = explode('/', $path);
+                $segment = explode('/', $internalRoute);
 
                 $controllerName = array_shift($segment) . 'Controller';
                 $controllerName = ucfirst($controllerName);
@@ -53,7 +53,7 @@ class Router
 
                 //Создаем обьект
                 $controllerObject = new $controllerName;
-                $result = $controllerObject->$actionName($parameters);
+                $result = call_user_func_array(array($controllerObject, $actionName), $parameters);
 
                 if ($result != null) {
                     break;

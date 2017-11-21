@@ -8,11 +8,11 @@ class AdminController
         return true;
     }
 
-    public function actionView($params)
+    public function actionView($category, $id)
     {
-        echo '<br>' . $params[0];
-        echo '<br>' . $params[1];
-        echo '<br>' . $params[3];
+
+        echo '<br>' .$category;
+        echo '<br>' .$id;
         return true;
     }
 }

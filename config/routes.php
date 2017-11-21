@@ -1,7 +1,7 @@
 <?php
 return array(
 
-    'admin/([a-z]+)/([0-9]+)' => 'admin/view/$1/$2',
-    'admin' => 'admin/home',
+    'news/([0-9]+)' => 'news/view/$1/',
+    'news' => 'news/index',
 
 );
