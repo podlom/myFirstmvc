@@ -7,35 +7,41 @@ class News
 
     public static function getNewsItemById($id)
     {
+        $id = intval($id);
 
+        if ($id) {
+
+            $db = Db::getConnection();
+
+            $result = $db->query('SELECT * from news WHERE id=' . $id);
+            $result = $db->setFetchMode(PDO::FETCH_ASSOC);
+            $newsItem = $result->fetch();
+
+            return $newsItem;
+        }
     }
 
     public static function getNewsList()
     {
 
-        $host = 'localhost';
-        $dbname = 'mvc_site';
-        $user = 'root';
-        $password = '';
-        $db = new PDO("mysql:host = $host; dbname = $dbname", $user, $password);
+        $db = DB::getConnection();
 
-        var_dump($db);
         $newList = array();
-        var_dump($newList);
+
         $result = $db->query('SELECT id, title, data, short_content '
             . 'FROM news '
             . 'ORDER BY date DESC '
             . 'LIMIT 10');
 
         $i = 0;
-        while($row = $result->fetch()) {
+        while ($row = $result->fetch()) {
             $newList[$i]['id'] = $row['id'];
             $newList[$i]['title'] = $row['title'];
             $newList[$i]['data'] = $row['data'];
             $newList[$i]['short_content'] = $row['short_content'];
             $i++;
         }
-        var_dump($row);
+
         return $newList;
 
     }
