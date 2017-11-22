@@ -34,16 +34,16 @@ class News
             . 'ORDER BY date DESC '
             . 'LIMIT 10 ');
 
+        $result->execute();
+
         $i = 0;
         while ($row = $result->fetch()) {
             $newList[$i]['id'] = $row['id'];
             $newList[$i]['title'] = $row['title'];
-            $newList[$i]['data'] = $row['data'];
+            $newList[$i]['date'] = $row['date'];
             $newList[$i]['short_content'] = $row['short_content'];
             $i++;
         }
-
         return $newList;
-
     }
 }
