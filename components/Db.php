@@ -1,6 +1,6 @@
 <?php
 
-class DbConnect
+class Db
 {
     public static function getConnection() {
         $params = require_once  '../config/db_params.php';
