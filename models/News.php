@@ -13,8 +13,9 @@ class News
 
             $db = Db::getConnection();
 
-            $result = $db->query('SELECT * from news WHERE id=' . $id);
-            $result = $db->setFetchMode(PDO::FETCH_ASSOC);
+            $result = $db->query('SELECT * FROM news WHERE id= ' . $id);
+            $result->setFetchMode(PDO::FETCH_ASSOC);
+
             $newsItem = $result->fetch();
 
             return $newsItem;
@@ -28,10 +29,10 @@ class News
 
         $newList = array();
 
-        $result = $db->query('SELECT id, title, data, short_content '
+        $result = $db->query('SELECT id, title, date, short_content '
             . 'FROM news '
             . 'ORDER BY date DESC '
-            . 'LIMIT 10');
+            . 'LIMIT 10 ');
 
         $i = 0;
         while ($row = $result->fetch()) {

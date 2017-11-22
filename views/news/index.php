@@ -1,7 +1,162 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: andrii
- * Date: 22.11.2017
- * Time: 15:15
- */
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Personal Blog</title>
+
+    <!-- Main CSS Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="../../template/css/style.css">
+
+</head>
+<body>
+
+<!-- Preloader Start -->
+<div class="preloader">
+    <div class="rounder"></div>
+</div>
+<!-- Preloader End -->
+
+
+<div id="main">
+    <div class="container">
+        <div class="row">
+
+
+            <!-- About Me (Left Sidebar) Start -->
+            <div class="col-md-3">
+                <div class="about-fixed">
+
+                    <div class="my-pic">
+                        <img src="images/pic/my-pic.png" alt="">
+                        <a href="javascript:void(0)" class="collapsed" data-target="#menu" data-toggle="collapse"><i
+                                    class="icon-menu menu"></i></a>
+                        <div id="menu" class="collapse">
+                            <ul class="menu-link">
+                                <li><a href="about.html">About</a></li>
+                                <li><a href="work.html">Work</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <div class="my-detail">
+
+                        <div class="white-spacing">
+                            <h1>Alex Parker</h1>
+                            <span>Web Developer</span>
+                        </div>
+
+                        <ul class="social-icon">
+                            <li><a href="#" target="_blank" class="facebook"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#" target="_blank" class="twitter"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#" target="_blank" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="#" target="_blank" class="github"><i class="fa fa-github"></i></a></li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+            <!-- About Me (Left Sidebar) End -->
+
+
+            <!-- Blog Post (Right Sidebar) Start -->
+            <div class="col-md-9">
+                <div class="col-md-12 page-body">
+                    <div class="row">
+
+
+                        <div class="sub-title">
+                            <h2>My Blog</h2>
+                            <a href="contact.html"><i class="icon-envelope"></i></a>
+                        </div>
+
+
+                        <div class="col-md-12 content-page">
+
+
+                            <!-- Blog Post Start -->
+                            <div class="col-md-12 blog-post">
+                                <div class="post-title">
+                                    <a href="single.html"><h1>How to make your company website based on bootstrap
+                                            framework on localhost?</h1></a>
+                                </div>
+                                <div class="post-info">
+                                    <span>November 23, 2016 / by <a href="#" target="_blank">Alex Parker</a></span>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae ut ratione
+                                    similique temporibus tempora dicta soluta? Qui hic, voluptatem nemo quo corporis
+                                    dignissimos voluptatum debitis cumque fugiat mollitia quasi quod. Lorem ipsum dolor
+                                    sit amet, consectetur adipisicing elit. Molestiae ut ratione similique.</p>
+                                <a href="single.html"
+                                   class="button button-style button-anim fa fa-long-arrow-right"><span>Read More</span></a>
+                            </div>
+                            <!-- Blog Post End -->
+
+                            <div class="col-md-12 text-center">
+                                <a href="javascript:void(0)" id="load-more-post" class="load-more-button">Load</a>
+                                <div id="post-end-message"></div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Subscribe Form Start -->
+                    <div class="col-md-8 col-md-offset-2">
+                        <form id="mc-form" method="post"
+                              action="http://uipasta.us14.list-manage.com/subscribe/post?u=854825d502cdc101233c08a21&amp;id=86e84d44b7">
+
+                            <div class="subscribe-form margin-top-20">
+                                <input id="mc-email" type="email" placeholder="Email Address" class="text-input">
+                                <button class="submit-btn" type="submit">Submit</button>
+                            </div>
+                            <p>Subscribe to my weekly newsletter</p>
+                            <label for="mc-email" class="mc-label"></label>
+                        </form>
+
+                    </div>
+                    <!-- Subscribe Form End -->
+
+                </div>
+
+
+                <!-- Footer Start -->
+                <div class="col-md-12 page-body margin-top-50 footer">
+                    <footer>
+                        <ul class="menu-link">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="work.html">Work</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+
+                        <p>© Copyright 2016 DevBlog. All rights reserved</p>
+
+
+                        <!-- UiPasta Credit Start -->
+                        <div class="uipasta-credit">Design By <a href="http://www.uipasta.com"
+                                                                 target="_blank">UiPasta</a></div>
+                        <!-- UiPasta Credit End -->
+
+
+                    </footer>
+                </div>
+                <!-- Footer End -->
+
+
+            </div>
+            <!-- Blog Post (Right Sidebar) End -->
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
