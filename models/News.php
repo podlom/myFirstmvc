@@ -29,7 +29,7 @@ class News
 
         $newList = array();
 
-        $result = $db->query('SELECT id, title, date, short_content '
+        $result = $db->query('SELECT id, title, date, short_content, author_name '
             . 'FROM news '
             . 'ORDER BY date DESC '
             . 'LIMIT 10 ');
@@ -41,6 +41,7 @@ class News
             $newList[$i]['id'] = $row['id'];
             $newList[$i]['title'] = $row['title'];
             $newList[$i]['date'] = $row['date'];
+            $newList[$i]['author_name'] = $row['author_name'];
             $newList[$i]['short_content'] = $row['short_content'];
             $i++;
         }
