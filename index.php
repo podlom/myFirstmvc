@@ -3,9 +3,15 @@
 
 
 //require '../components/Loader.php';
-//
-//$loader = new Loader();
+
 //spl_autoload_register([$loader, 'loadClass']);
+
+//try {
+//$loader = new Loader();
+//} catch (Exception $e) {
+//   echo $e->getMessage(), "\n";
+//}
+
 
 ini_set('display errors', 1);
 error_reporting(E_ALL);
