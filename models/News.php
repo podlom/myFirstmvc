@@ -14,6 +14,7 @@ class News
             $db = Db::getConnection();
 
             $result = $db->query('SELECT * FROM news WHERE id= ' . $id);
+            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $result->setFetchMode(PDO::FETCH_ASSOC);
 
             $newsItem = $result->fetch();
@@ -33,7 +34,7 @@ class News
             . 'FROM news '
             . 'ORDER BY date DESC '
             . 'LIMIT 10 ');
-
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $result->execute();
 
         $i = 0;
